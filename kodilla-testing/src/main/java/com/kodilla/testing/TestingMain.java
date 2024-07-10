@@ -1,22 +1,36 @@
 package com.kodilla.testing;
 
-public class TestingMain {
-    public static void main(String[] args) {
-        System.out.println("Moduł 6. Wprowadzenie to testowania oprogramowania");
-        String text = "Czy text zawiera samogłoski";
-        System.out.println(findVowels(text));
-    }
+import com.kodilla.testing.calculator.Calculator;
+import com.kodilla.testing.user.SimpleUser;
 
-    //Additional exercise
-    public static String findVowels(String text) {
-        String vowels = "aeiouAEIOU";
-        String result = "";
-        char[] vowelsArray = text.toCharArray();
-        for (int i = 0; i < vowelsArray.length; i++) {
-            if (vowels.contains((Character.toString(vowelsArray[i])))) {
-                result += (vowelsArray[i]);
-            }
+public class TestingMain {
+
+    public static void main(String[] args) {
+        SimpleUser simpleUser = new SimpleUser("theForumUser");
+
+        String result = simpleUser.getUsername();
+
+        if (result.equals("theForumUser")) {
+            System.out.println("test OK");
+        } else {
+            System.out.println("Error!");
         }
-        return result;
+        System.out.println("Test - pierwszy test jednostkowy:");
+
+        Calculator calculator = new Calculator();
+        calculator.add(5, 4);
+        calculator.subtract(5, 4);
+
+        if (calculator.add(5, 4) == 5 + 4) {
+            System.out.println("test OK");
+        } else if (calculator.add(5, 4) != 5 + 4) {
+            System.out.println("Error!");
+        }
+
+        if (calculator.subtract(5, 4) == 5 - 4) {
+            System.out.println("test OK");
+        } else if (calculator.subtract(5, 4) != 5 - 4) {
+            System.out.println("Error!");
+        }
     }
 }
