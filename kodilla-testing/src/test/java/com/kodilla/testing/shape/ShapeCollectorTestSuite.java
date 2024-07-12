@@ -27,29 +27,30 @@ public class ShapeCollectorTestSuite {
     public class FigureOperate {
         @Test
         public void addFigureTest() {
-            //Given
+            //given
             Shape circle = new Circle(5);
             ShapeCollector collector = new ShapeCollector();
 
-            //When
+            //when
             collector.addFigure(circle);
 
-            //Then
+            //then
             assertEquals(1, collector.getNumberOfFigures());
         }
 
         @Test
         public void removeFigureTest() {
-            //Given
+            //given
             Shape circle = new Circle(5);
             ShapeCollector collector = new ShapeCollector();
             collector.addFigure(circle);
 
-            //When
+            //when
             boolean result = collector.removeFigure(circle);
 
-            //Then
+            //then
             assertTrue(result);
+            assertEquals(0, collector.getNumberOfFigures());
         }
     }
 
@@ -58,31 +59,31 @@ public class ShapeCollectorTestSuite {
     public class FigureAccess {
         @Test
         public void getFiguresTest() {
-            //Given
+            //given
             Shape circle = new Circle(5);
             ShapeCollector collector = new ShapeCollector();
             collector.addFigure(circle);
 
-            //When
+            //when
             Shape retrievedShape = collector.getFigure(0);
 
-            //Then
+            //then
             assertEquals(circle, retrievedShape);
         }
 
         @Test
         public void showFiguresTest() {
-            //Given
+            //given
             Shape circle = new Circle(5);
             Shape square = new Square(5);
             ShapeCollector collector = new ShapeCollector();
             collector.addFigure(circle);
             collector.addFigure(square);
 
-            //When
+            //when
             String result = collector.showFigures();
 
-            //Then
+            //then
             assertEquals("Circle, Square", result);
         }
     }
