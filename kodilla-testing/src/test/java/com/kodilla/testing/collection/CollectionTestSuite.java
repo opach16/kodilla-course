@@ -34,21 +34,18 @@ public class CollectionTestSuite {
         Assertions.assertArrayEquals(expectedList.toArray(), emptyArray);
     }
 
-    @DisplayName(
-            "If the provided list contains odd numbers, " +
-            "the method should return list of only even numbers"
-    )
+    @DisplayName("""
+            If the provided list contains odd numbers, 
+            the method should return list of only even numbers
+            """)
     @Test
     void testOddNumbersExterminatorNormalList() {
         //Given
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
-        Integer[] numbersArray = new Integer[]{1, 2, 3, 4, 5, 6};
-        Integer[] evenNumbersArray = new Integer[]{2, 4, 6};
-
         //When
-        List<Integer> expectedList = oddNumbersExterminator.exterminate(Arrays.asList(numbersArray));
+        List<Integer> result = oddNumbersExterminator.exterminate(List.of(1, 2, 3, 4, 5, 6));
 
         //Then
-        Assertions.assertArrayEquals(expectedList.toArray(), evenNumbersArray);
+        Assertions.assertEquals(List.of(2, 4, 6), result);
     }
 }

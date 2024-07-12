@@ -27,7 +27,7 @@ public class ForumTestSuite {
 
     @DisplayName(
             "when create SimpleUser with realName, " +
-            "then getRealName should return real user name"
+                    "then getRealName should return real user name"
     )
     @Test
     void testCaseRealName() {
@@ -42,7 +42,7 @@ public class ForumTestSuite {
 
     @DisplayName(
             "When created SimpleUser with name, " +
-            "then getUsername should return correct name"
+                    "then getUsername should return correct name"
     )
     @Test
     void testCaseUsername() {
