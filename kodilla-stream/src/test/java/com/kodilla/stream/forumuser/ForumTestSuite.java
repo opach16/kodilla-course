@@ -1,8 +1,5 @@
-package com.kodilla.stream.beautifier.forumuser;
+package com.kodilla.stream.forumuser;
 
-
-import com.kodilla.stream.forumuser.Forum;
-import com.kodilla.stream.forumuser.ForumUser;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -18,9 +15,9 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class ForumTestSuite {
 
-    List<ForumUser> forumUsers;
+    private List<ForumUser> forumUsers;
     @Mock
-    Forum forumMock;
+    private Forum forumMock;
 
     @BeforeEach
     void setUp() {
