@@ -86,7 +86,7 @@ class BoardTestSuite {
                 .average().getAsDouble();
 
         //then
-        assertEquals(10, averageNumberOfDays, 0);
+        assertEquals(10, averageNumberOfDays);
     }
 
     private Board prepareTestData() {
