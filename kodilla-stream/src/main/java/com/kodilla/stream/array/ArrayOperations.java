@@ -8,10 +8,11 @@ public interface ArrayOperations {
         if (numbers == null || numbers.length == 0) {
             return 0;
         }
-        IntStream.range(0, numbers.length)
-                .map(i -> numbers[i])
-                .forEach(System.out::println);
         return IntStream.range(0, numbers.length)
+                .map(i -> {
+                    System.out.println(i);
+                    return i;
+                })
                 .mapToDouble(i -> numbers[i])
                 .average()
                 .getAsDouble();

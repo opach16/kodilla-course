@@ -24,6 +24,6 @@ public class FirstChallengeTestSuite {
         FirstChallenge firstChallenge = new FirstChallenge();
 
         //then
-        assertThrows(ArithmeticException.class, () -> firstChallenge.divide(5, 0));
+        assertThrows(ArithmeticException.class, () -> firstChallenge.divide(5, 0), "Divide by zero");
     }
 }
