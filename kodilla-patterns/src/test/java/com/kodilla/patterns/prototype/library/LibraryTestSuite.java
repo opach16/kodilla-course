@@ -20,14 +20,14 @@ public class LibraryTestSuite {
 
         Library shallowClonedLibrary = null;
         try {
-            shallowClonedLibrary = library.shallowClone();
+            shallowClonedLibrary = library.shallowCopy();
         } catch (CloneNotSupportedException e) {
             System.out.println(e.getMessage());
         }
 
         Library deepClonedLibrary = null;
         try {
-            deepClonedLibrary = library.deepClone();
+            deepClonedLibrary = library.deepCopy();
         } catch (CloneNotSupportedException e) {
             System.out.println(e.getMessage());
         }
