@@ -17,7 +17,7 @@ public class Fibonacci {
             result = b;
         }
 
-        for (int i = 0; i < number - 2; i++) {
+        for (int i = 0; i < number - 1; i++) {
             if (a > b) {
                 b = a + b;
                 result = b;

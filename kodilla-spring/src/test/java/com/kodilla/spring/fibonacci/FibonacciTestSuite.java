@@ -18,8 +18,8 @@ public class FibonacciTestSuite {
         Fibonacci fibonacci = context.getBean(Fibonacci.class);
 
         //when & then
-        assertEquals(5, fibonacci.calculate(6));
+        assertEquals(8, fibonacci.calculate(6));
         assertEquals(1, fibonacci.calculate(2));
-        assertEquals(21, fibonacci.calculate(9));
+        assertEquals(34, fibonacci.calculate(9));
     }
 }
