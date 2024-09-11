@@ -1,0 +1,46 @@
+CREATE TABLE ISSUESLISTS
+(
+    ID SERIAL PRIMARY KEY,
+    NAME VARCHAR(100) CHARSET utf8 NOT NULL
+);
+
+CREATE TABLE ISSUES
+(
+    ID SERIAL PRIMARY KEY,
+    ISSUESLIST_ID BIGINT UNSIGNED NOT NULL,
+    FOREIGN KEY (ISSUESLIST_ID) REFERENCES ISSUESLISTS(ID),
+    SUMMARY VARCHAR(100) NOT NULL,
+    DESCRIPTION VARCHAR(20000) CHARSET utf8 NOT NULL,
+    USER_ID_ASSIGNEDTO BIGINT UNSIGNED NOT NULL,
+    FOREIGN KEY (USER_ID_ASSIGNEDTO) REFERENCES USERS(ID)
+);
+
+INSERT INTO ISSUESLISTS (NAME)
+VALUES ('ToDo');
+
+INSERT INTO ISSUESLISTS (NAME)
+VALUES ('In Progress');
+
+INSERT INTO ISSUESLISTS (NAME)
+VALUES ('Done');
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES
+    (1, 'Fix login bug', 'Resolve the issue where users cannot log in using Google OAuth', 5),
+    (1, 'Update user profile', 'Add a new field for profile picture in the user profile page', 3),
+    (1, 'Optimize database', 'Improve query performance on the reports section', 4),
+    (1, 'UI enhancements', 'Redesign the dashboard for better usability', 2),
+    (1, 'Security audit', 'Perform a full security audit on the system and patch vulnerabilities', 1),
+    (2, 'Create API documentation', 'Generate API documentation for the new features', 2),
+    (2, 'Fix password reset', 'Resolve issues with the password reset email not being sent', 4),
+    (2, 'Refactor authentication module', 'Simplify the authentication code for easier maintenance', 1),
+    (2, 'Add dark mode', 'Implement a dark mode option for the user interface', 3),
+    (2, 'Data export issue', 'Fix error when exporting large datasets to CSV', 5),
+    (2, 'Mobile app compatibility', 'Ensure the web app is fully compatible with the latest mobile devices', 2),
+    (3, 'Add multi-language support', 'Enable the system to handle multiple languages for international users', 3),
+    (3, 'Setup CI/CD pipeline', 'Automate testing and deployment using CI/CD pipeline', 4),
+    (3, 'Fix broken links', 'Identify and repair broken links in the documentation section', 1),
+    (3, 'Improve search functionality', 'Enhance the search algorithm for more accurate results', 5),
+    (3, 'Enable two-factor authentication', 'Add support for two-factor authentication in the login process', 3),
+    (3, 'Fix UI glitches', 'Resolve minor user interface bugs on the profile page', 2),
+    (3, 'Performance testing', 'Conduct performance tests for high-traffic scenarios', 1);
