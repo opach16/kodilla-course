@@ -11,6 +11,12 @@ import java.util.List;
         query = "SELECT * FROM COMPANIES WHERE SUBSTRING(COMPANY_NAME, 1, 3) = :SUBSTRING",
         resultClass = Company.class
 )
+@NamedNativeQuery(
+        name = "Company.retrieveCompanyByPartOfName",
+        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT('%', :ARG, '%')",
+        resultClass = Company.class
+)
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
